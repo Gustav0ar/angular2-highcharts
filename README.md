@@ -1,5 +1,5 @@
-# @kiwigrid/ngx-highcharts
-##### This is a fork based on https://github.com/gevgeny/angular2-highcharts
+# @gustav0ar/ngx-highcharts
+##### This is a fork based on https://github.com/kiwigrid/angular2-highcharts
 
 > Highcharts chart components for Angular apps. 👉 [Live Demo](http://plnkr.co/edit/AJwozFWVR7TkQZnt05dN?p=preview)
 
@@ -35,16 +35,16 @@
 
 ## Setting Up
 
-### Install @kiwigrid/ngx-highcharts
+### Install @gustav0ar/ngx-highcharts
 ```
-npm install @kiwigrid/ngx-highcharts --save
+npm install @gustav0ar/ngx-highcharts --save
 ```
 
 ### Setup App @NgModule
 ```TypeScript
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ChartModule } from '@kiwigrid/ngx-highcharts';
+import { ChartModule } from '@gustav0ar/ngx-highcharts';
 import { App } from './App';
 
 @NgModule({
@@ -68,7 +68,7 @@ You should add appropriate mapping to your `systemjs.config.js`
 ...
 map: {
   ...
-  '@kiwigrid/ngx-highcharts': 'node_modules/@kiwigrid/ngx-highcharts',
+  '@gustav0ar/ngx-highcharts': 'node_modules/@gustav0ar/ngx-highcharts',
   'highcharts': 'node_modules/highcharts',
 }
 ...
@@ -78,7 +78,7 @@ packages: {
     main: './highcharts.js',
     defaultExtension: 'js'
   },
-  '@kiwigrid/ngx-highcharts': {
+  '@gustav0ar/ngx-highcharts': {
     main: './index.js',
     defaultExtension: 'js'
   }
@@ -116,7 +116,7 @@ export class App {
 👉 [Live Demo](http://plnkr.co/edit/IuwjpPB1YQW1T7i4B8SZ?p=preview)
 
 ### Handling Events
-Highcharts itself provides bunch of events, and you still can use them with @kiwigrid/ngx-highcharts via the `options` property of the `chart` component. But it is not an angular way to handle events like this. So that @kiwigrid/ngx-highcharts provides `EventEmitter<ChartEvent>` wrappers for highcharts events. `ChartEvent` is an @kiwigrid/ngx-highcharts class which simply wraps original Highcharts events (`chartEvent.originalEvent`) and adds event handler context (`chartEvent.context`) since it differs depending on events.
+Highcharts itself provides bunch of events, and you still can use them with @gustav0ar/ngx-highcharts via the `options` property of the `chart` component. But it is not an angular way to handle events like this. So that @gustav0ar/ngx-highcharts provides `EventEmitter<ChartEvent>` wrappers for highcharts events. `ChartEvent` is an @gustav0ar/ngx-highcharts class which simply wraps original Highcharts events (`chartEvent.originalEvent`) and adds event handler context (`chartEvent.context`) since it differs depending on events.
 
 #### Chart Events
 
@@ -186,7 +186,7 @@ onAfterSetExtremesY (e) {
 👉 [Live Demo](http://plnkr.co/edit/c4ojcIRVOOwq7xmk9kfx?p=preview)
 ### Dynamic Interaction with Chart Object
 
-@kiwigrid/ngx-highcharts provides possibility to interact with native `HighchartsChartObject` chart object.
+@gustav0ar/ngx-highcharts provides possibility to interact with native `HighchartsChartObject` chart object.
 
 ```TypeScript
 @Component({
@@ -348,10 +348,11 @@ Here are some common charts examples with Webpack integration https://github.com
 
 #### Why don't my series, title, axes and etc redraw after I update initial options ?
 
-Because `@kiwigrid/ngx-highcharts` is just a thin wrapper of the [Highcharts](http:/ /www.highcharts.com/) library and doesn't bind to initial options. I understand that you expect more angular-way behaviour like data binding with appropriate redrawing. But it is barely possible to implement it without redundant complications and performance decrease because almost all options can be dynamic. So my idea was to avoid any additional logic more than just a sugar (like events for series and options). In the other hand Highcharts has great [API](http://api.highcharts.com/highcharts#Chart) for dynamic manipulations with chart and `@kiwigrid/ngx-highcharts` [provides you access](#dynamic-interaction-with-chart-object) to the original chart object.
+Because `@gustav0ar/ngx-highcharts` is just a thin wrapper of the [Highcharts](http:/ /www.highcharts.com/) library and doesn't bind to initial options. I understand that you expect more angular-way behaviour like data binding with appropriate redrawing. But it is barely possible to implement it without redundant complications and performance decrease because almost all options can be dynamic. So my idea was to avoid any additional logic more than just a sugar (like events for series and options). In the other hand Highcharts has great [API](http://api.highcharts.com/highcharts#Chart) for dynamic manipulations with chart and `@gustav0ar/ngx-highcharts` [provides you access](#dynamic-interaction-with-chart-object) to the original chart object.
 
 ## License
 MIT @ Eugene Gluhotorenko
 MIT @ Kiwigrid
+MIT @ Gustav0ar
 
 
